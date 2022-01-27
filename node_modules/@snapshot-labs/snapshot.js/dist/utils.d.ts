@@ -1,0 +1,55 @@
+import Multicaller from './utils/multicaller';
+import getProvider from './utils/provider';
+import { signMessage, getBlockNumber } from './utils/web3';
+import { getHash, verify } from './sign/utils';
+export declare const SNAPSHOT_SUBGRAPH_URL: {
+    1: string;
+    4: string;
+    42: string;
+};
+export declare function call(provider: any, abi: any[], call: any[], options?: any): Promise<any>;
+export declare function multicall(network: string, provider: any, abi: any[], calls: any[], options?: any): Promise<any>;
+export declare function subgraphRequest(url: string, query: any, options?: any): Promise<any>;
+export declare function getUrl(uri: any, gateway?: string): any;
+export declare function ipfsGet(gateway: string, ipfsHash: string, protocolType?: string): Promise<any>;
+export declare function sendTransaction(web3: any, contractAddress: string, abi: any[], action: string, params: any[], overrides?: {}): Promise<any>;
+export declare function getScores(space: string, strategies: any[], network: string, addresses: string[], snapshot?: number | string, scoreApiUrl?: string): Promise<any>;
+export declare function validateSchema(schema: any, data: any): true | import("ajv").ErrorObject<string, Record<string, any>, unknown>[] | null | undefined;
+export declare function getSpaceUri(id: any, network?: string): Promise<any>;
+export declare function clone(item: any): any;
+export declare function sleep(time: any): Promise<unknown>;
+export declare function getNumberWithOrdinal(n: any): string;
+declare const _default: {
+    call: typeof call;
+    multicall: typeof multicall;
+    subgraphRequest: typeof subgraphRequest;
+    ipfsGet: typeof ipfsGet;
+    getUrl: typeof getUrl;
+    sendTransaction: typeof sendTransaction;
+    getScores: typeof getScores;
+    validateSchema: typeof validateSchema;
+    getSpaceUri: typeof getSpaceUri;
+    clone: typeof clone;
+    sleep: typeof sleep;
+    getNumberWithOrdinal: typeof getNumberWithOrdinal;
+    voting: {
+        'single-choice': typeof import("./voting/singleChoice").default;
+        approval: typeof import("./voting/approval").default;
+        quadratic: typeof import("./voting/quadratic").default;
+        'ranked-choice': typeof import("./voting/rankedChoice").default;
+        weighted: typeof import("./voting/weighted").default;
+        basic: typeof import("./voting/singleChoice").default;
+    };
+    getProvider: typeof getProvider;
+    signMessage: typeof signMessage;
+    getBlockNumber: typeof getBlockNumber;
+    Multicaller: typeof Multicaller;
+    validations: {
+        basic: typeof import("./validations/basic").default;
+        aave: typeof import("./validations/aave").default;
+        nouns: typeof import("./validations/nouns").default;
+    };
+    getHash: typeof getHash;
+    verify: typeof verify;
+};
+export default _default;
